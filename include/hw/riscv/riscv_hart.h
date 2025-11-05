@@ -34,10 +34,10 @@ struct RISCVHartArrayState {
     SysBusDevice parent_obj;
 
     /*< public >*/
-    uint32_t num_harts;
+    uint32_t num_harts;//核心数
     uint32_t hartid_base;
-    char *cpu_type;
-    uint64_t resetvec;
+    char *cpu_type;//cpu型号
+    uint64_t resetvec;//复位地址
     uint32_t num_rnmi_irqvec;
     uint64_t *rnmi_irqvec;
     uint32_t num_rnmi_excpvec;

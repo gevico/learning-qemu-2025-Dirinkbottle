@@ -46,6 +46,7 @@ typedef struct G233SoCState {
 #define RISCV_G233_MACHINE(obj) \
     OBJECT_CHECK(G233MachineState, (obj), TYPE_RISCV_G233_MACHINE)
 
+    //g233设备状态结构体定义
 typedef struct G233MachineState {
     /*< private >*/
     MachineState parent_obj;

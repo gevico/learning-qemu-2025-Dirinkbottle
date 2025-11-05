@@ -372,7 +372,7 @@ typedef struct DeviceMemoryState {
  * @max_cpus: the maximum number of logical processors on the machine
  */
 typedef struct CpuTopology {
-    unsigned int cpus;
+    unsigned int cpus;//配置的 cpu核心数
     unsigned int drawers;
     unsigned int books;
     unsigned int sockets;
@@ -436,7 +436,7 @@ struct MachineState {
     char *kernel_cmdline;
     char *shim_filename;
     char *initrd_filename;
-    const char *cpu_type;
+    const char *cpu_type;//父类属性
     AccelState *accelerator;
     CPUArchIdList *possible_cpus;
     CpuTopology smp;

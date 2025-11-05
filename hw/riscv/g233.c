@@ -46,13 +46,18 @@ static const MemMapEntry g233_memmap[] = {
     [G233_DEV_PWM0] =     { 0x10015000,     0x1000 },
     [G233_DEV_DRAM] =     { 0x80000000, 0x40000000 },
 };
-
+/*本质上默认值的初始化 分配实例内存 建立对象关系*/
 static void g233_soc_init(Object *obj)
 {
     /*
      * You can add more devices here(e.g. cpu, gpio)
      * Attention: The cpu resetvec is 0x1004
      */
+    //初始化嵌入对象
+    G233SoCState *s = RISCV_G233_SOC(obj);
+    object_initialize_child(obj, "cpus", &s->cpus, TYPE_RISCV_HART_ARRAY);
+    object_initialize_child(obj, "gpio", &s->gpio, TYPE_SIFIVE_GPIO);
+    
 }
 
 static void g233_soc_realize(DeviceState *dev, Error **errp)
@@ -63,6 +68,21 @@ static void g233_soc_realize(DeviceState *dev, Error **errp)
     const MemMapEntry *memmap = g233_memmap;
 
     /* CPUs realize */
+    //设置cpu型号
+    object_property_set_str(OBJECT(&s->cpus), "cpu-type",
+                           ms->cpu_type, &error_abort);
+    //核心数量
+    object_property_set_int(OBJECT(&s->cpus), "num-harts",
+                           ms->smp.cpus, &error_abort);
+    //复位地址
+    object_property_set_int(OBJECT(&s->cpus), "resetvec",
+                           0x1004, &error_abort);
+
+    //连接总线并实例化
+    if (!sysbus_realize(SYS_BUS_DEVICE(&s->cpus), errp)) {
+        return;
+    }
+
 
     /* Mask ROM */
     memory_region_init_rom(&s->mask_rom, OBJECT(dev), "riscv.g233.mrom",
@@ -160,9 +180,16 @@ static void g233_machine_init(MachineState *machine)
     }
 
     /* Initialize SoC */
-
+    //实例化soc
+    object_initialize_child(OBJECT(machine), "soc", &s->soc, TYPE_RISCV_G233_SOC);
+    qdev_realize(DEVICE(&s->soc), NULL, &error_abort);
 
     /* Data Memory(DDR RAM) */
+    //标注ddr ram
+    memory_region_add_subregion(get_system_memory(),
+                                memmap[G233_DEV_DRAM].base,
+                                machine->ram);
+
 
     /* Mask ROM reset vector */
     uint32_t reset_vec[5];
@@ -188,6 +215,7 @@ static void g233_machine_init(MachineState *machine)
 
 static void g233_machine_instance_init(Object *obj)
 {
+    //机器最初的soc和参数默认值的配置 ，这里延迟到machine_init根据命令行动态创建更好
 }
 
 static void g233_machine_class_init(ObjectClass *oc, const void *data)
