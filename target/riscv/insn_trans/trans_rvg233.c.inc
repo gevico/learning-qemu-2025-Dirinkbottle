@@ -6,7 +6,7 @@ static bool trans_dma(DisasContext *ctx, arg_dma *a)
     gen_helper_dma(tcg_env, dst, src, gran);
     return true;
 }
-
+/*
 static bool trans_sort(DisasContext *ctx, arg_sort *a)
 {
     TCGv addr = get_gpr(ctx, a->rs1, EXT_NONE);
@@ -33,3 +33,4 @@ static bool trans_expand(DisasContext *ctx, arg_expand *a)
     gen_helper_expand(tcg_env, dst, src, num);
     return true;
 }
+*/

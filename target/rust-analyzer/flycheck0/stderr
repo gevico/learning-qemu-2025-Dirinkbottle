@@ -1,0 +1,1045 @@
+   0.014831734s  INFO prepare_target{force=false package_id=bits v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/bits) target="bits"}: cargo::core::compiler::fingerprint: fingerprint error for bits v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/bits)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("bits", ["lib"], "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/bits/src/lib.rs", Edition2021) }
+   0.014882421s  INFO prepare_target{force=false package_id=bits v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/bits) target="bits"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/bits-c50d5f793f6c7c69/lib-bits`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.079923111s  INFO prepare_target{force=false package_id=bits v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/bits) target="bits"}: cargo::core::compiler::fingerprint: fingerprint error for bits v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/bits)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("bits", ["lib"], "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/bits/src/lib.rs", Edition2021) }
+   0.079958394s  INFO prepare_target{force=false package_id=bits v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/bits) target="bits"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/bits-32f8af730d2fdf19/test-lib-bits`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.084900932s  INFO prepare_target{force=false package_id=hpet v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/timer/hpet) target="hpet"}: cargo::core::compiler::fingerprint: fingerprint error for hpet v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/timer/hpet)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("hpet", ["lib"], "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/timer/hpet/src/lib.rs", Edition2021) }
+   0.084942996s  INFO prepare_target{force=false package_id=hpet v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/timer/hpet) target="hpet"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/hpet-7d9b364f8b042192/lib-hpet`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.085625563s  INFO prepare_target{force=false package_id=qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api) target="qemu_api"}: cargo::core::compiler::fingerprint: fingerprint error for qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("qemu_api", ["lib"], "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api/src/lib.rs", Edition2021) }
+   0.085651186s  INFO prepare_target{force=false package_id=qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api) target="qemu_api"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/qemu_api-2e6410f213574d68/lib-qemu_api`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  26: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  27: <unknown>
+   0.086217148s  INFO prepare_target{force=false package_id=anyhow v1.0.98 target="anyhow"}: cargo::core::compiler::fingerprint: fingerprint error for anyhow v1.0.98/Check { test: false }/TargetInner { ..: lib_target("anyhow", ["lib"], "/home/inkbottle/.cargo/registry/src/mirrors.ustc.edu.cn-38d0e5eb5da2abae/anyhow-1.0.98/src/lib.rs", Edition2018) }
+   0.086242385s  INFO prepare_target{force=false package_id=anyhow v1.0.98 target="anyhow"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/anyhow-c3ddce2b684bb761/lib-anyhow`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  27: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  28: <unknown>
+   0.086895912s  INFO prepare_target{force=false package_id=foreign v0.3.1 target="foreign"}: cargo::core::compiler::fingerprint: fingerprint error for foreign v0.3.1/Check { test: false }/TargetInner { ..: lib_target("foreign", ["lib"], "/home/inkbottle/.cargo/registry/src/mirrors.ustc.edu.cn-38d0e5eb5da2abae/foreign-0.3.1/src/lib.rs", Edition2021) }
+   0.086921799s  INFO prepare_target{force=false package_id=foreign v0.3.1 target="foreign"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/foreign-bc203715b13bfa43/lib-foreign`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  27: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  28: <unknown>
+   0.087406287s  INFO prepare_target{force=false package_id=libc v0.2.162 target="libc"}: cargo::core::compiler::fingerprint: fingerprint error for libc v0.2.162/Check { test: false }/TargetInner { ..: lib_target("libc", ["lib"], "/home/inkbottle/.cargo/registry/src/mirrors.ustc.edu.cn-38d0e5eb5da2abae/libc-0.2.162/src/lib.rs", Edition2015) }
+   0.087429510s  INFO prepare_target{force=false package_id=libc v0.2.162 target="libc"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/libc-f933f9b60db121c0/lib-libc`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  18: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  19: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  20: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  21: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  23: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  24: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  25: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  26: main
+  27: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  28: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  29: <unknown>
+   0.087755440s  INFO prepare_target{force=false package_id=qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api) target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api)/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api/build.rs", Edition2021) }
+   0.087779609s  INFO prepare_target{force=false package_id=qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api) target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/qemu_api-d7d4f576c567f465/run-build-script-build-script-build`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::custom_build::build_work
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  18: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  19: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  20: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  21: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  23: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  24: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  25: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  26: main
+  27: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  28: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  29: <unknown>
+   0.088247594s  INFO prepare_target{force=false package_id=hpet v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/timer/hpet) target="hpet"}: cargo::core::compiler::fingerprint: fingerprint error for hpet v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/timer/hpet)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("hpet", ["lib"], "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/timer/hpet/src/lib.rs", Edition2021) }
+   0.088272119s  INFO prepare_target{force=false package_id=hpet v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/timer/hpet) target="hpet"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/hpet-fc2286268ffa81c8/test-lib-hpet`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.088979150s  INFO prepare_target{force=false package_id=pl011 v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/char/pl011) target="pl011"}: cargo::core::compiler::fingerprint: fingerprint error for pl011 v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/char/pl011)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("pl011", ["lib"], "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/char/pl011/src/lib.rs", Edition2021) }
+   0.089009592s  INFO prepare_target{force=false package_id=pl011 v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/char/pl011) target="pl011"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/pl011-a549de6d39d9fcc4/lib-pl011`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.089504481s  INFO prepare_target{force=false package_id=bilge v0.2.0 target="bilge"}: cargo::core::compiler::fingerprint: fingerprint error for bilge v0.2.0/Check { test: false }/TargetInner { name_inferred: true, benched: false, ..: lib_target("bilge", ["lib"], "/home/inkbottle/.cargo/registry/src/mirrors.ustc.edu.cn-38d0e5eb5da2abae/bilge-0.2.0/src/lib.rs", Edition2021) }
+   0.089527593s  INFO prepare_target{force=false package_id=bilge v0.2.0 target="bilge"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/bilge-3888b59bc95e48b6/lib-bilge`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  26: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  27: <unknown>
+   0.089965237s  INFO prepare_target{force=false package_id=arbitrary-int v1.2.7 target="arbitrary_int"}: cargo::core::compiler::fingerprint: fingerprint error for arbitrary-int v1.2.7/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("arbitrary_int", ["lib"], "/home/inkbottle/.cargo/registry/src/mirrors.ustc.edu.cn-38d0e5eb5da2abae/arbitrary-int-1.2.7/src/lib.rs", Edition2021) }
+   0.089989477s  INFO prepare_target{force=false package_id=arbitrary-int v1.2.7 target="arbitrary_int"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/arbitrary-int-4773ba6d04a76f9e/lib-arbitrary_int`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  27: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  28: <unknown>
+   0.090786117s  INFO prepare_target{force=false package_id=pl011 v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/char/pl011) target="pl011"}: cargo::core::compiler::fingerprint: fingerprint error for pl011 v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/char/pl011)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("pl011", ["lib"], "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/char/pl011/src/lib.rs", Edition2021) }
+   0.090822406s  INFO prepare_target{force=false package_id=pl011 v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/hw/char/pl011) target="pl011"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/pl011-3fcf444affba503e/test-lib-pl011`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.091290096s  INFO prepare_target{force=false package_id=qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api) target="qemu_api"}: cargo::core::compiler::fingerprint: fingerprint error for qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("qemu_api", ["lib"], "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api/src/lib.rs", Edition2021) }
+   0.091313879s  INFO prepare_target{force=false package_id=qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api) target="qemu_api"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/qemu_api-a1b96fabfd32b263/test-lib-qemu_api`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.091781589s  INFO prepare_target{force=false package_id=qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api) target="tests"}: cargo::core::compiler::fingerprint: fingerprint error for qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api)/Check { test: true }/TargetInner { kind: "test", name: "tests", benched: false, ..: with_path("/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api/tests/tests.rs", Edition2021) }
+   0.091845606s  INFO prepare_target{force=false package_id=qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api) target="tests"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/qemu_api-4c3ad2f3d8aae287/test-integration-test-tests`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.092616124s  INFO prepare_target{force=false package_id=qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api) target="vmstate_tests"}: cargo::core::compiler::fingerprint: fingerprint error for qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api)/Check { test: true }/TargetInner { kind: "test", name: "vmstate_tests", benched: false, ..: with_path("/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api/tests/vmstate_tests.rs", Edition2021) }
+   0.092640059s  INFO prepare_target{force=false package_id=qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api) target="vmstate_tests"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/qemu_api-72460839182fea1e/test-integration-test-vmstate_tests`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.093161548s  INFO prepare_target{force=false package_id=qemu_api_macros v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api-macros) target="qemu_api_macros"}: cargo::core::compiler::fingerprint: fingerprint error for qemu_api_macros v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api-macros)/Check { test: false }/TargetInner { name_inferred: true, for_host: true, proc_macro: true, ..: lib_target("qemu_api_macros", ["proc-macro"], "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api-macros/src/lib.rs", Edition2021) }
+   0.093186784s  INFO prepare_target{force=false package_id=qemu_api_macros v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api-macros) target="qemu_api_macros"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/qemu_api_macros-3c735e43ea07fae4/lib-qemu_api_macros`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+   0.093631749s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.84 target="proc_macro2"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro2 v1.0.84/Check { test: false }/TargetInner { doc_scrape_examples: Disabled, ..: lib_target("proc_macro2", ["lib"], "/home/inkbottle/.cargo/registry/src/mirrors.ustc.edu.cn-38d0e5eb5da2abae/proc-macro2-1.0.84/src/lib.rs", Edition2021) }
+   0.093653854s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.84 target="proc_macro2"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/proc-macro2-4caa2aa03d40d949/lib-proc_macro2`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  26: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  27: <unknown>
+   0.094058676s  INFO prepare_target{force=false package_id=unicode-ident v1.0.12 target="unicode_ident"}: cargo::core::compiler::fingerprint: fingerprint error for unicode-ident v1.0.12/Check { test: false }/TargetInner { name_inferred: true, doc_scrape_examples: Disabled, ..: lib_target("unicode_ident", ["lib"], "/home/inkbottle/.cargo/registry/src/mirrors.ustc.edu.cn-38d0e5eb5da2abae/unicode-ident-1.0.12/src/lib.rs", Edition2018) }
+   0.094082896s  INFO prepare_target{force=false package_id=unicode-ident v1.0.12 target="unicode_ident"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/unicode-ident-7ad570d1264bf436/lib-unicode_ident`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  18: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  19: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  22: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  23: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  27: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  28: <unknown>
+   0.094470280s  INFO prepare_target{force=false package_id=quote v1.0.36 target="quote"}: cargo::core::compiler::fingerprint: fingerprint error for quote v1.0.36/Check { test: false }/TargetInner { name_inferred: true, doc_scrape_examples: Disabled, ..: lib_target("quote", ["lib"], "/home/inkbottle/.cargo/registry/src/mirrors.ustc.edu.cn-38d0e5eb5da2abae/quote-1.0.36/src/lib.rs", Edition2018) }
+   0.094492965s  INFO prepare_target{force=false package_id=quote v1.0.36 target="quote"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/quote-2c7ce1315483fd49/lib-quote`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  26: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  27: <unknown>
+   0.095033772s  INFO prepare_target{force=false package_id=syn v2.0.66 target="syn"}: cargo::core::compiler::fingerprint: fingerprint error for syn v2.0.66/Check { test: false }/TargetInner { doc_scrape_examples: Disabled, ..: lib_target("syn", ["lib"], "/home/inkbottle/.cargo/registry/src/mirrors.ustc.edu.cn-38d0e5eb5da2abae/syn-2.0.66/src/lib.rs", Edition2021) }
+   0.095058236s  INFO prepare_target{force=false package_id=syn v2.0.66 target="syn"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/syn-f084ee4e9be26ef2/lib-syn`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  17: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  18: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  21: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  22: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  26: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  27: <unknown>
+   0.095532250s  INFO prepare_target{force=false package_id=qemu_api_macros v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api-macros) target="qemu_api_macros"}: cargo::core::compiler::fingerprint: fingerprint error for qemu_api_macros v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api-macros)/Check { test: true }/TargetInner { name_inferred: true, for_host: true, proc_macro: true, ..: lib_target("qemu_api_macros", ["proc-macro"], "/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api-macros/src/lib.rs", Edition2021) }
+   0.095556683s  INFO prepare_target{force=false package_id=qemu_api_macros v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api-macros) target="qemu_api_macros"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/.fingerprint/qemu_api_macros-6c12994367cdb88f/test-lib-qemu_api_macros`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: core::ops::function::impls::<impl core::ops::function::FnOnce<A> for &F>::call_once
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  16: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  17: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{{closure}}
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:590:40
+  20: std::panicking::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:553:19
+  21: std::panic::catch_unwind
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+             at ./csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+  25: __libc_start_main_impl
+             at ./csu/../csu/libc-start.c:360:3
+  26: <unknown>
+    Checking unicode-ident v1.0.12
+    Checking arbitrary-int v1.2.7
+   Compiling qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api)
+    Checking libc v0.2.162
+    Checking anyhow v1.0.98
+    Checking bits v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/bits)
+    Checking proc-macro2 v1.0.84
+error: failed to run custom build command for `qemu_api v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api)`
+note: To improve backtraces for build dependencies, set the CARGO_PROFILE_DEV_BUILD_OVERRIDE_DEBUG=true environment variable to enable debug information generation.
+
+Caused by:
+  process didn't exit successfully: `/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/target/debug/build/qemu_api-9403a94da5164618/build-script-build` (exit status: 101)
+  --- stderr
+
+  thread 'main' (156917) panicked at qemu-api/build.rs:22:9:
+
+      No generated C bindings found! Maybe you wanted one of
+      `make clippy`, `make rustfmt`, `make rustdoc`?
+
+      For other uses of `cargo`, start a subshell with
+      `pyvenv/bin/meson devenv`, or point MESON_BUILD_ROOT to
+      the top of the build tree.
+  stack backtrace:
+     0: __rustc::rust_begin_unwind
+               at /rustc/278a90913daf7707791020a592d722dd7971f196/library/std/src/panicking.rs:698:5
+     1: core::panicking::panic_fmt
+               at /rustc/278a90913daf7707791020a592d722dd7971f196/library/core/src/panicking.rs:80:14
+     2: build_script_build::main
+     3: core::ops::function::FnOnce::call_once
+  note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+warning: build failed, waiting for other jobs to finish...
+    Checking bilge v0.2.0
+    Checking quote v1.0.36
+    Checking foreign v0.3.1
+    Checking syn v2.0.66
+    Checking qemu_api_macros v0.1.0 (/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/rust/qemu-api-macros)
