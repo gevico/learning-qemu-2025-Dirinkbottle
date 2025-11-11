@@ -17,7 +17,7 @@ static bool trans_sort(DisasContext *ctx, arg_sort *a)
     return true;
 }
 
-/*
+
 static bool trans_crush(DisasContext *ctx, arg_crush *a)
 {
     TCGv dst = get_gpr(ctx, a->rd, EXT_NONE);
@@ -27,6 +27,8 @@ static bool trans_crush(DisasContext *ctx, arg_crush *a)
     return true;
 }
 
+
+
 static bool trans_expand(DisasContext *ctx, arg_expand *a)
 {
     TCGv dst = get_gpr(ctx, a->rd, EXT_NONE);
@@ -35,4 +37,3 @@ static bool trans_expand(DisasContext *ctx, arg_expand *a)
     gen_helper_expand(tcg_env, dst, src, num);
     return true;
 }
-*/

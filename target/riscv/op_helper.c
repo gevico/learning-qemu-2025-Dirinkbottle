@@ -775,8 +775,33 @@ void helper_sort(CPURISCVState *env, target_ulong addr,target_ulong array_num, t
         }
         
     }
-    
+}
 
+/* hardware数组压缩函数 */
+void helper_crush(CPURISCVState *env, target_ulong dst,target_ulong src, target_ulong array_num){
+
+    for (int i = 0; i < array_num-1; i+=2)
+    {
+        uint8_t will_low = cpu_ldl_data(env,src+i*(sizeof(uint8_t)));
+        uint8_t will_hign  = cpu_ldl_data(env,src+(i+1)*(sizeof(uint8_t)));
+        uint8_t combine  = (will_hign<<4 | will_low);
+        cpu_stl_data(env,dst + (i/2)*sizeof(uint8_t),combine);
+    }
+
+}
+
+/* expand指令 */
+void helper_expand(CPURISCVState *env, target_ulong dst,target_ulong src, target_ulong array_num){
+    for (int i = 0; i < array_num; i++)
+    {
+        uint8_t src_data = cpu_ldl_data(env,src+i*(sizeof(uint8_t)));
+        uint8_t hign_bit = src_data >> 4;
+        uint8_t low_bit  = src_data & 0xF;
+        cpu_stl_data(env,dst + (i*2)*sizeof(uint8_t),low_bit);
+        cpu_stl_data(env,dst + (i*2+1)*sizeof(uint8_t),hign_bit);
+        
+    }
+    
 }
 
 
