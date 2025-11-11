@@ -717,4 +717,39 @@ target_ulong helper_hyp_hlvx_wu(CPURISCVState *env, target_ulong addr)
     return cpu_ldl_code_mmu(env, addr, oi, ra);
 }
 
+
+void helper_dma(CPURISCVState *env, target_ulong dst,target_ulong src, target_ulong grain){
+    size_t size;
+    switch (grain)
+    {
+    case 0:
+        size=8;
+        break;
+    case 1:
+        size=16;
+        break;
+    case 2:
+        size=32;
+        break;
+    default:
+        return;//错误了
+        break;
+    }
+
+    for (size_t i = 0; i < size; i++)
+    {
+        for (size_t j = 0; j < i; j++)
+        {
+            //行排序的
+            target_ulong src_addr = src + (j * size + i) * 4;
+            uint32_t value = cpu_ldl_data(env, src_addr);
+            
+            target_ulong dst_addr = dst + (i * size + j) * 4;
+            cpu_stl_data(env, dst_addr, value);
+        }
+    }
+    
+
+}
+
 #endif /* !CONFIG_USER_ONLY */

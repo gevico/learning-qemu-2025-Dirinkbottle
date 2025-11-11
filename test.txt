@@ -1,0 +1,7 @@
+changing dir to build for make "check-gevico-tcg"...
+make[1]: Entering directory '/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/build'
+  BUILD   riscv64-softmmu guest-tests
+  RUN     riscv64-softmmu guest-tests
+  TEST      1/10   test-board-g233 on riscv64     
+  TEST      2/10   test-insn-dma on riscv64       
+make[1]: Leaving directory '/home/inkbottle/othersrc/learning-qemu-2025-Dirinkbottle/build'
