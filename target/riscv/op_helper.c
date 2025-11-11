@@ -738,18 +738,46 @@ void helper_dma(CPURISCVState *env, target_ulong dst,target_ulong src, target_ul
 
     for (size_t i = 0; i < size; i++)
     {
-        for (size_t j = 0; j < i; j++)
+        for (size_t j = 0; j < size; j++)
         {
             //行排序的
-            target_ulong src_addr = src + (j * size + i) * 4;
+            target_ulong src_addr = src + (j * size + i) * sizeof(uint32_t);
             uint32_t value = cpu_ldl_data(env, src_addr);
             
-            target_ulong dst_addr = dst + (i * size + j) * 4;
+            target_ulong dst_addr = dst + (i * size + j) * sizeof(uint32_t);
             cpu_stl_data(env, dst_addr, value);
         }
     }
     
 
 }
+
+
+/* tcg_env, addr, array_num, sort_num */
+void helper_sort(CPURISCVState *env, target_ulong addr,target_ulong array_num, target_ulong sort_num){
+    //升序排序
+
+    if(sort_num > array_num){
+        return;
+    }
+
+    for (uint32_t i = 0; i < sort_num; i++)
+    {
+        for (uint32_t j = 0; j < sort_num-i-1; j++)
+        {
+            int pre = cpu_ldl_data(env, addr + j*sizeof(uint32_t));
+            int current = cpu_ldl_data(env, addr + (j+1)*sizeof(uint32_t));
+            if(pre > current ){
+                int tmp = pre;
+                cpu_stl_data(env, addr + j*sizeof(uint32_t), current);
+                cpu_stl_data(env, addr + (j+1)*sizeof(uint32_t), tmp);
+            }
+        }
+        
+    }
+    
+
+}
+
 
 #endif /* !CONFIG_USER_ONLY */

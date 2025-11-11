@@ -7,7 +7,7 @@ static bool trans_dma(DisasContext *ctx, arg_dma *a)
     return true;
 }
 
-/*
+
 static bool trans_sort(DisasContext *ctx, arg_sort *a)
 {
     TCGv addr = get_gpr(ctx, a->rs1, EXT_NONE);
@@ -17,6 +17,7 @@ static bool trans_sort(DisasContext *ctx, arg_sort *a)
     return true;
 }
 
+/*
 static bool trans_crush(DisasContext *ctx, arg_crush *a)
 {
     TCGv dst = get_gpr(ctx, a->rd, EXT_NONE);
