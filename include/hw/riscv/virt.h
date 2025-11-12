@@ -91,6 +91,7 @@ enum {
 };
 
 enum {
+    G233_SPI_IRQ=9,
     UART0_IRQ = 10,
     RTC_IRQ = 11,
     VIRTIO_IRQ = 1, /* 1 to 8 */

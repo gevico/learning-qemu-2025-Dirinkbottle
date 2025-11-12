@@ -73,10 +73,10 @@ static void spi_wait_not_busy(void)
     } while (sr & SPI_SR_BSY);
 }
 
-static uint8_t spi_transfer_byte(uint8_t data)
+static uint8_t spi_transfer_byte(uint8_t data) //写进去8bit 然后读出来8bit（全双工）
 {
     /* Wait for TX buffer to be empty */
-    spi_wait_txe();
+    spi_wait_txe(); 
     
     /* Write data to DR register */
     spi_write_reg(SPI_DR, data);

@@ -34,6 +34,10 @@
 #include "hw/intc/sifive_plic.h"
 #include "hw/misc/unimp.h"
 #include "hw/char/pl011.h"
+#include "hw/spi/g233spi.h"
+#include "hw/ssi/ssi.h"
+#include "hw/qdev-properties.h"
+#include "system/device_tree.h"
 
 /* TODO: you need include some header files */
 
@@ -44,6 +48,7 @@ static const MemMapEntry g233_memmap[] = {
     [G233_DEV_UART0] =    { 0x10000000,     0x1000 },
     [G233_DEV_GPIO0] =    { 0x10012000,     0x1000 },
     [G233_DEV_PWM0] =     { 0x10015000,     0x1000 },
+    [G233_DEV_SPI]   =    { 0x10018000,     0x1000 },
     [G233_DEV_DRAM] =     { 0x80000000, 0x40000000 },
 };
 /*本质上默认值的初始化 分配实例内存 建立对象关系*/
@@ -183,6 +188,37 @@ static void g233_machine_init(MachineState *machine)
     //实例化soc
     object_initialize_child(OBJECT(machine), "soc", &s->soc, TYPE_RISCV_G233_SOC);
     qdev_realize(DEVICE(&s->soc), NULL, &error_abort);
+
+    /* 创建G233SPI */
+    DeviceState *dev = qdev_new(TYPE_G233_SPI);
+
+    sysbus_realize_and_unref(SYS_BUS_DEVICE(dev), &error_fatal);
+    sysbus_mmio_map(SYS_BUS_DEVICE(dev), 0, memmap[G233_DEV_SPI].base);
+    sysbus_connect_irq(SYS_BUS_DEVICE(dev), 0,
+                       qdev_get_gpio_in(DEVICE(s->soc.plic), G233_SPI_IRQ));
+
+    G233SPIState *spi = G233_SPI(dev);
+    for (int cs = 0; cs < G233_SPI_NUM_CS; cs++) {
+        DeviceState *flash = qdev_new("w25x16");
+
+        qdev_prop_set_uint8(flash, "cs", cs);
+        ssi_realize_and_unref(flash, spi->bus, &error_fatal);
+        qdev_connect_gpio_out_named(dev, "cs", cs,
+            qdev_get_gpio_in_named(flash, SSI_GPIO_CS, 0));
+    }
+
+    MemoryRegionSection spi_section =
+        memory_region_find(get_system_memory(),
+                           memmap[G233_DEV_SPI].base,
+                           memmap[G233_DEV_SPI].size);
+    if (!spi_section.mr) {
+        error_report("G233: SPI MMIO range 0x%" HWADDR_PRIx " - 0x%" HWADDR_PRIx
+                     " 未映射成功",
+                     memmap[G233_DEV_SPI].base,
+                     memmap[G233_DEV_SPI].base + memmap[G233_DEV_SPI].size);
+    } else {
+        memory_region_unref(spi_section.mr);
+    }
 
     /* Data Memory(DDR RAM) */
     //标注ddr ram
