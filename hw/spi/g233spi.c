@@ -18,11 +18,20 @@ enum {
     G233_SPI_REG_CSCTRL  = 0x10,
 };
 
-#define G233_SPI_SR_RXNE   BIT(0)
-#define G233_SPI_SR_TXE    BIT(1)
-#define G233_SPI_SR_BSY    BIT(7)
+#define G233_SPI_SR_RXNE     BIT(0)
+#define G233_SPI_SR_TXE      BIT(1)
+#define G233_SPI_SR_UNDERRUN BIT(2)
+#define G233_SPI_SR_OVERRUN  BIT(3)
+#define G233_SPI_SR_BSY      BIT(7)
+
+
 
 #define G233_SPI_CR1_SPE   BIT(6)
+
+#define G233_SPI_CR2_SSOE   BIT(4)
+#define G233_SPI_CR2_ERRIE  BIT(5)
+#define G233_SPI_CR2_RXNEIE BIT(6)
+#define G233_SPI_CR2_TXEIE  BIT(7)
 
 #define G233_SPI_CS_ENABLE_MASK   0x0f
 #define G233_SPI_CS_ACTIVE_MASK   0x0f
@@ -75,6 +84,9 @@ static bool g233spi_any_cs_active(G233SPIState *s)
     return false;
 }
 
+
+
+
 static uint64_t g233spi_read(void *opaque, hwaddr addr, unsigned size)
 {
     G233SPIState *s = opaque;
@@ -91,9 +103,20 @@ static uint64_t g233spi_read(void *opaque, hwaddr addr, unsigned size)
         value = s->SPI_SR;
         break;
     case G233_SPI_REG_DR:
+        
+        /* 溢出检查 */
+        if (!(s->SPI_SR & G233_SPI_SR_RXNE) || !s->rx_valid)
+        {
+            /* 溢出 */
+            s->SPI_SR |= G233_SPI_SR_UNDERRUN;
+            g233spi_update(s);  // 更新错误状态
+            break;
+        }
+
         value = s->SPI_DR;
         s->SPI_SR &= ~G233_SPI_SR_RXNE;
         s->rx_valid = false;
+        //g233spi_update(s);
         break;
     case G233_SPI_REG_CSCTRL:
         value = s->SPI_CSCTRL;
@@ -105,6 +128,7 @@ static uint64_t g233spi_read(void *opaque, hwaddr addr, unsigned size)
                       addr, size);
         break;
     }
+
 
     return value;
 }
@@ -123,10 +147,16 @@ static void g233spi_write(void *opaque, hwaddr addr, uint64_t value,
         s->SPI_CR2 = val32;
         break;
     case G233_SPI_REG_SR:
-        qemu_log_mask(LOG_GUEST_ERROR,
-                      "g233.spi: write to read-only SR at 0x%" HWADDR_PRIx
-                      " value=0x%" PRIx64 "\n",
-                      addr, value);
+        //部分寄存器 overrun underrun 实现写1置位
+        if (val32 & G233_SPI_SR_UNDERRUN)
+        {
+            s->SPI_SR &= ~G233_SPI_SR_UNDERRUN;
+        }
+        if (val32 & G233_SPI_SR_OVERRUN)
+        {
+            s->SPI_SR &= ~G233_SPI_SR_OVERRUN;
+        }
+        // 其他位不许写
         break;
     case G233_SPI_REG_DR:
         if (!(s->SPI_CR1 & G233_SPI_CR1_SPE)) {
@@ -134,6 +164,14 @@ static void g233spi_write(void *opaque, hwaddr addr, uint64_t value,
                           "g233.spi: write to DR while SPI disabled\n");
             break;
         }
+
+        /* 溢出检查 */
+        if (!(s->SPI_SR & G233_SPI_SR_TXE))
+        {
+            /* 溢出 */
+            s->SPI_SR |= G233_SPI_SR_OVERRUN;
+        }
+        
 
         /* 此时发送缓冲区有数据 */
         s->SPI_SR &= ~G233_SPI_SR_TXE; 
@@ -192,6 +230,28 @@ static void g233spi_update(G233SPIState *s)
         s->SPI_SR &= ~G233_SPI_SR_RXNE;
     }
 
+    uint8_t sr = s->SPI_SR;
+    uint8_t cr2 = s->SPI_CR2;
+
+    /* 错误优先 */
+    if ((cr2 & G233_SPI_CR2_ERRIE) && ((sr & G233_SPI_SR_OVERRUN) || (sr & G233_SPI_SR_UNDERRUN)))
+    {
+        qemu_set_irq(s->plic_irq, 1); //通知cpu
+    }
+
+    /* 发送缓冲区为空 */
+    if ((cr2 & G233_SPI_CR2_TXEIE) && (sr & G233_SPI_SR_TXE))
+    {
+        qemu_set_irq(s->plic_irq, 1); //通知cpu
+    }
+
+    /* 接受到新数据 */
+    if ((cr2 & G233_SPI_CR2_RXNEIE) && !(sr & G233_SPI_SR_TXE))
+    {
+        qemu_set_irq(s->plic_irq, 1); //通知cpu
+    }
+    
+
     s->SPI_SR |= G233_SPI_SR_TXE;
 
     qemu_set_irq(s->plic_irq, 0); //通知cpu
@@ -203,8 +263,8 @@ static void g233spi_reset(DeviceState *dev)
 
     s->SPI_CR1 = 0x00000000;
     s->SPI_CR2 = 0x00000000;
-    s->SPI_SR = G233_SPI_SR_TXE;
-    s->SPI_DR = 0x0000000C; //jedec
+    s->SPI_SR = G233_SPI_SR_TXE;//初始化为空
+    s->SPI_DR = 0x0000000C; //实验要求
     s->SPI_CSCTRL = 0x00000000;
     s->rx_buf = 0;
     s->rx_valid = false;
