@@ -52,7 +52,7 @@ static const MemoryRegionOps g233_spi_ops = {
     .endianness = DEVICE_NATIVE_ENDIAN,
     .impl = {
         .min_access_size = 1,
-        .max_access_size = 4,
+        .max_access_size = 1,
     },
 };
 
@@ -116,7 +116,7 @@ static uint64_t g233spi_read(void *opaque, hwaddr addr, unsigned size)
         value = s->SPI_DR;
         s->SPI_SR &= ~G233_SPI_SR_RXNE;
         s->rx_valid = false;
-        //g233spi_update(s);
+        g233spi_update(s);
         break;
     case G233_SPI_REG_CSCTRL:
         value = s->SPI_CSCTRL;
@@ -156,7 +156,7 @@ static void g233spi_write(void *opaque, hwaddr addr, uint64_t value,
         {
             s->SPI_SR &= ~G233_SPI_SR_OVERRUN;
         }
-        // 其他位不许写
+
         break;
     case G233_SPI_REG_DR:
         if (!(s->SPI_CR1 & G233_SPI_CR1_SPE)) {
@@ -166,7 +166,15 @@ static void g233spi_write(void *opaque, hwaddr addr, uint64_t value,
         }
 
         /* 溢出检查 */
-        if (!(s->SPI_SR & G233_SPI_SR_TXE))
+        /**
+         * 
+         *  SPI 溢出发生在以下情况：
+            接收缓冲区有数据未读取（RXNE = 1）
+            继续发送新数据
+            新数据到达但无法存储到已满的接收缓冲区
+            触发溢出错误标志（OVERRUN = 1）
+         */
+        if ((s->SPI_SR & G233_SPI_SR_RXNE) || !(s->SPI_SR & G233_SPI_SR_TXE))
         {
             /* 溢出 */
             s->SPI_SR |= G233_SPI_SR_OVERRUN;
@@ -232,29 +240,31 @@ static void g233spi_update(G233SPIState *s)
 
     uint8_t sr = s->SPI_SR;
     uint8_t cr2 = s->SPI_CR2;
+    bool irq_pending = false;
+
 
     /* 错误优先 */
     if ((cr2 & G233_SPI_CR2_ERRIE) && ((sr & G233_SPI_SR_OVERRUN) || (sr & G233_SPI_SR_UNDERRUN)))
     {
-        qemu_set_irq(s->plic_irq, 1); //通知cpu
+       irq_pending =true;
     }
 
     /* 发送缓冲区为空 */
     if ((cr2 & G233_SPI_CR2_TXEIE) && (sr & G233_SPI_SR_TXE))
     {
-        qemu_set_irq(s->plic_irq, 1); //通知cpu
+        irq_pending =true;
     }
 
     /* 接受到新数据 */
     if ((cr2 & G233_SPI_CR2_RXNEIE) && !(sr & G233_SPI_SR_TXE))
     {
-        qemu_set_irq(s->plic_irq, 1); //通知cpu
+        irq_pending =true;
     }
     
 
-    s->SPI_SR |= G233_SPI_SR_TXE;
+    
 
-    qemu_set_irq(s->plic_irq, 0); //通知cpu
+    qemu_set_irq(s->plic_irq, irq_pending?1:0); //通知cpu
 }
 
 static void g233spi_reset(DeviceState *dev)
